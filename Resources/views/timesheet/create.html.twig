@@ -1,28 +1,12 @@
 {% extends 'timesheet/edit.html.twig' %}
 
 {% block main %}
-<pre>Aarhus kommune</pre>
-
-    {{  parent() }}
-
-{#    {{ dump(form|keys) }}#}
-
-    {% if 0==1 %}
-{{ form_start(form) }}
-{{ form_row(form.begin_date) }}
-{{ form_row(form.begin_time) }}
-{{ form_row(form.end_time) }}
-{{ form_row(form.activity) }}
-{#{{ form_row(form.description) }}#}
-
-<div style="x-display: none; outline: solid 2px red">
-    {{ form_rest(form) }}
-</div>
-{{ form_end(form) }}
-    {% endif %}
-{% endblock %}
-
-{% block timesheet_form %}
-xxx
+    <style>
+{# Hide the project element. There must be a better way to do this. #}
+.timesheet_edit_form_row_project {
+    display: none;
+}
+    </style>
+    {{ parent() }}
 {% endblock %}
 

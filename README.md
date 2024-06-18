@@ -18,7 +18,7 @@ aarhus_kommune:
 
 See [Install and update Kimai plugins](https://www.kimai.org/documentation/plugin-management.html) for details.
 
-Go to `/da/aarhus-kommune/create` and enjoy.
+Go to `/da/aarhus-kommune/timesheet/create` and enjoy.
 
 ## Development
 
