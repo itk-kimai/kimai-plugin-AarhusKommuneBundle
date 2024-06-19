@@ -64,6 +64,7 @@ bin/console kimai:reload --no-interaction
 
 ``` shell
 docker run --rm --volume ${PWD}:/app --workdir /app itkdev/php8.3-fpm composer install
+docker run --rm --volume ${PWD}:/app --workdir /app itkdev/php8.3-fpm composer normalize
 docker run --rm --volume ${PWD}:/app --workdir /app itkdev/php8.3-fpm composer coding-standards-apply
 docker run --rm --volume ${PWD}:/app --workdir /app itkdev/php8.3-fpm composer coding-standards-check
 ```
