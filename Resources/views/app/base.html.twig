@@ -1,0 +1,11 @@
+{# Resources/views/app/base.html.twig #}
+{% extends '@App/base.html.twig' %}
+
+{% block page_content_after %}
+    <div class="float-help">
+        <a href="https://aarhuskommune.dk/tid" target="_blank" accesskey="h" title="{{ 'help'|trans }}">
+            <i class="fas fa-question"></i>
+        </a>
+    </div>
+    <div class="mb-4"></div>
+{% endblock %}
