@@ -2,7 +2,7 @@
 
 ## Installation
 
-Download [a release](https://github.com/itk-dev/kimai-plugin-AarhusKommuneBundle/releases) and move it to `var/plugins/`.
+Download [a release](https://github.com/itk-kimai/kimai-plugin-AarhusKommuneBundle/releases) and move it to `var/plugins/`.
 
 ```shell
 bin/console kimai:reload --no-interaction
@@ -23,7 +23,7 @@ Go to `/da/aarhus-kommune/timesheet/create` and enjoy.
 ## Development
 
 ``` shell
-git clone --branch develop https://github.com/itk-dev/kimai-plugin-AarhusKommuneBundle var/plugins/AarhusKommuneBundle
+git clone --branch develop https://github.com/itk-kimai/kimai-plugin-AarhusKommuneBundle var/plugins/AarhusKommuneBundle
 bin/console kimai:reload --no-interaction
 ```
 
