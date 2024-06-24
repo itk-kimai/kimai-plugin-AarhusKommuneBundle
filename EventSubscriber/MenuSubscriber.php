@@ -11,7 +11,6 @@
 namespace KimaiPlugin\AarhusKommuneBundle\EventSubscriber;
 
 use App\Event\ConfigureMainMenuEvent;
-use App\Utils\MenuItemModel;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 final class MenuSubscriber implements EventSubscriberInterface
@@ -19,15 +18,20 @@ final class MenuSubscriber implements EventSubscriberInterface
     public static function getSubscribedEvents(): array
     {
         return [
-            // Set a very high priority in the hope that we are run first.
-            ConfigureMainMenuEvent::class => ['onMenuConfigure', 10_000],
+            // Set a very low priority in the hope that we are run last.
+            ConfigureMainMenuEvent::class => ['onMenuConfigure', -9999],
         ];
     }
 
     public function onMenuConfigure(ConfigureMainMenuEvent $event): void
     {
-        $event->getMenu()->addChild(
-            new MenuItemModel('aarhus_kommune_timesheet_create', 'Aarhus kommune', 'aarhus_kommune_timesheet_create', [], 'fas fa-snowman')
-        );
+        $menu = $event->getMenu();
+        // Remove the 'dashboard' menu item.
+        foreach ($menu->getChildren() as $child) {
+            if ('dashboard' === $child->getRoute()) {
+                $menu->removeChild($child);
+                break;
+            }
+        }
     }
 }

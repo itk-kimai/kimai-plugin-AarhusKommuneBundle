@@ -11,6 +11,8 @@ bin/console kimai:bundle:aarhus_kommune:install --no-interaction
 bin/console kimai:reload --no-interaction
 ```
 
+See [Install and update Kimai plugins](https://www.kimai.org/documentation/plugin-management.html) for details.
+
 Edit your [`local.yaml`](https://www.kimai.org/documentation/local-yaml.html#localyaml):
 
 ``` yaml
@@ -18,11 +20,12 @@ Edit your [`local.yaml`](https://www.kimai.org/documentation/local-yaml.html#loc
 aarhus_kommune:
     primary_project: 87
     primary_activity: 42
+
+# Set route on Tabler logo
+tabler:
+    routes:
+        tabler_welcome: quick_entry
 ```
-
-See [Install and update Kimai plugins](https://www.kimai.org/documentation/plugin-management.html) for details.
-
-Go to `/da/aarhus-kommune/timesheet/create` and enjoy.
 
 ## Features
 
@@ -62,6 +65,14 @@ Another example:
 git clone --branch develop https://github.com/itk-kimai/kimai-plugin-AarhusKommuneBundle var/plugins/AarhusKommuneBundle
 bin/console kimai:reload --no-interaction
 ```
+
+Rather that hard copying plugin assets (cf. [Installation](#installation) above), you can run
+
+``` shell
+bin/console assets:install --symlink
+```
+
+to [symlink](https://en.wikipedia.org/wiki/Symbolic_link) the `public` folder.
 
 ### Coding standards
 

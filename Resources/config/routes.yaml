@@ -1,8 +1,0 @@
-controllers:
-    resource: '@AarhusKommuneBundle/Controller/'
-    type: attribute
-    prefix: /{_locale}/aarhus-kommune
-    requirements:
-        _locale: '%app_locales%'
-    defaults:
-        _locale: '%locale%'
