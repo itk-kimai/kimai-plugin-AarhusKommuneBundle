@@ -31,8 +31,19 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('primary_activity')
                     ->info('Id of primary activity')
                 ->end()
-            ->end()
-        ->end();
+
+                ->arrayNode('main_menu')
+                    ->children()
+                        ->arrayNode('remove')
+                            ->arrayPrototype()
+                                ->children()
+                                    ->scalarNode('route')
+                                ->end()
+                            ->end()
+                        ->end()
+                    ->end()
+                ->end()
+            ->end();
 
         return $treeBuilder;
     }
