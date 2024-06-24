@@ -24,14 +24,9 @@ final class ThemeEventSubscriber implements EventSubscriberInterface
 
     public function renderStylesheet(ThemeEvent $event): void
     {
-        // Hide the project element.
-        $css = <<<'CSS'
-<style>
-.timesheet_edit_form_row_project {
-    display: none;
-}
-</style>
-CSS;
+        $url = '/bundles/aarhuskommune/styles.css?' . http_build_query(['v' => '%%VERSION%%']);
+        $css = '<link rel="stylesheet" href="' . htmlspecialchars($url) . '"/>';
+
         $event->addContent($css);
     }
 }

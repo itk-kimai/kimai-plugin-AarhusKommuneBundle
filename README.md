@@ -5,6 +5,9 @@
 Download [a release](https://github.com/itk-kimai/kimai-plugin-AarhusKommuneBundle/releases) and move it to `var/plugins/`.
 
 ```shell
+# Install plugin assets in public/bundles/aarhuskommune (note it's "aarhuskommune" and not "aarhus_kommune").
+# Use "/bundles/aarhuskommune/" as base path when referencing assets..
+bin/console kimai:bundle:aarhus_kommune:install --no-interaction
 bin/console kimai:reload --no-interaction
 ```
 

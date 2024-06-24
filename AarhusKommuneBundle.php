@@ -17,12 +17,15 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class AarhusKommuneBundle extends Bundle implements PluginInterface
 {
+    public const PLUGIN_NAME = 'aarhus_kommune';
+
     public function build(ContainerBuilder $container): void
     {
         parent::build($container);
 
         $container->addCompilerPass(new class() implements CompilerPassInterface {
-            public function process(ContainerBuilder $container) {
+            public function process(ContainerBuilder $container)
+            {
                 $twigFilesystemLoaderDefinition = $container->findDefinition('twig.loader.native_filesystem');
 
                 // Prepend our custom templates in the `__main__` namespace.
