@@ -10,10 +10,9 @@
 
 namespace KimaiPlugin\AarhusKommuneBundle\EventSubscriber;
 
+use App\Event\TimesheetMetaDefinitionEvent;
 use KimaiPlugin\AarhusKommuneBundle\Configuration\AarhusKommuneConfiguration;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Symfony\Component\HttpKernel\Event\RequestEvent;
-use Symfony\Component\HttpKernel\KernelEvents;
 
 final class TimesheetCreateSubscriber implements EventSubscriberInterface
 {
@@ -26,33 +25,20 @@ final class TimesheetCreateSubscriber implements EventSubscriberInterface
     public static function getSubscribedEvents(): array
     {
         return [
-            KernelEvents::REQUEST => ['onKernelRequest'],
+            TimesheetMetaDefinitionEvent::class => ['onTimesheetMetaDefinition'],
         ];
     }
 
-    public function onKernelRequest(RequestEvent $event): void
-    {
-        // ignore sub-requests
-        if (!$event->isMainRequest()) {
-            return;
-        }
+    public function onTimesheetMetaDefinition(TimesheetMetaDefinitionEvent $event): void {
+        $timesheet = $event->getEntity();
 
-        $request = $event->getRequest();
-        $route = $request->attributes->get('_route');
-        if ('timesheet_create' === $route) {
-            try {
-                if (!$request->query->has('project')) {
-                    $project = $this->configuration->getPrimaryProject();
-                    $request->query->set('project', $project->getId());
-
-                    if (!$request->query->has('activity')) {
-                        $activity = $this->configuration->getPrimaryActivity($project);
-                        $request->query->set('activity', $activity->getId());
-                    }
-                }
-            } catch (\Exception $e) {
-                // Ignore all exceptions.
-            }
+        try {
+            $project = $this->configuration->getPrimaryProject();
+            $timesheet->setProject($project);
+            $activity = $this->configuration->getPrimaryActivity($project);
+            $timesheet->setActivity($activity);
+        } catch (\Exception $e) {
+            // Ignore all exceptions.
         }
     }
 }
