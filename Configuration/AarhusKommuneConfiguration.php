@@ -15,11 +15,12 @@ use App\Entity\Activity;
 use App\Entity\Project;
 use App\Repository\ActivityRepository;
 use App\Repository\ProjectRepository;
+use KimaiPlugin\AarhusKommuneBundle\AarhusKommuneBundle;
 use KimaiPlugin\AarhusKommuneBundle\Exception\RuntimeException;
 
 final class AarhusKommuneConfiguration
 {
-    public const CONFIGURATION_NAME = 'aarhus_kommune';
+    public const CONFIGURATION_NAME = AarhusKommuneBundle::PLUGIN_NAME;
 
     public function __construct(
         private readonly SystemConfiguration $configuration,
@@ -57,12 +58,17 @@ final class AarhusKommuneConfiguration
         return $activity;
     }
 
-    private function findConfiguration(string $name): mixed
+    public function getMainMenu(): array
+    {
+        return $this->findConfiguration('main_menu', allowEmpty: true, array: true) ?? [];
+    }
+
+    private function findConfiguration(string $name, bool $allowEmpty = false, bool $array = false): mixed
     {
         $key = self::CONFIGURATION_NAME . '.' . $name;
-        $value = $this->configuration->find($key);
+        $value = $array ? $this->configuration->findArray($key) : $this->configuration->find($key);
 
-        if (empty($value)) {
+        if (!$allowEmpty && empty($value)) {
             throw new RuntimeException(sprintf('Configuration %s is not set', $key));
         }
 

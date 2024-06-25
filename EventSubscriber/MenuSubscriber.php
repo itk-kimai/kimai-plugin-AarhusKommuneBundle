@@ -11,10 +11,18 @@
 namespace KimaiPlugin\AarhusKommuneBundle\EventSubscriber;
 
 use App\Event\ConfigureMainMenuEvent;
+use App\Utils\MenuItemModel;
+use KimaiPlugin\AarhusKommuneBundle\Configuration\AarhusKommuneConfiguration;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 final class MenuSubscriber implements EventSubscriberInterface
 {
+    public function __construct(
+        private readonly AarhusKommuneConfiguration $configuration,
+    )
+    {
+    }
+
     public static function getSubscribedEvents(): array
     {
         return [
@@ -26,11 +34,27 @@ final class MenuSubscriber implements EventSubscriberInterface
     public function onMenuConfigure(ConfigureMainMenuEvent $event): void
     {
         $menu = $event->getMenu();
-        // Remove the 'dashboard' menu item.
+
+        $configuration = $this->configuration->getMainMenu();
+        if (isset($configuration['remove'])) {
+            foreach ($configuration['remove'] as $spec) {
+                if (isset($spec['route'])) {
+                    $this->removeMenuItem($menu, route: $spec['route']);
+                }
+            }
+        }
+    }
+
+    /**
+     * Remove menu item by route name.
+     */
+    private function removeMenuItem(MenuItemModel $menu, string $route): void
+    {
         foreach ($menu->getChildren() as $child) {
-            if ('dashboard' === $child->getRoute()) {
+            if ($route === $child->getRoute()) {
                 $menu->removeChild($child);
-                break;
+            } else {
+                $this->removeMenuItem($child, $route);
             }
         }
     }

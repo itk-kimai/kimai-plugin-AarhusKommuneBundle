@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* [PR-4](https://github.com/itk-kimai/kimai-plugin-AarhusKommuneBundle/pull/4)
+  Trimmed main menu
 * [PR-2](https://github.com/itk-dev/kimai-plugin-AarhusKommuneBundle/pull/2)
   Add app icons
 * [PR-1](https://github.com/itk-dev/kimai-plugin-AarhusKommuneBundle/pull/1)

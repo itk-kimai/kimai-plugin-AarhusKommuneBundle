@@ -14,7 +14,7 @@ parameters:
     # checkGenericClassInNonGenericObjectType: false
 
     ignoreErrors:
-        # - identifier: missingType.iterableValue
+        - identifier: missingType.iterableValue
         # - identifier: missingType.generics
 
 

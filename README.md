@@ -21,6 +21,12 @@ aarhus_kommune:
     primary_project: 87
     primary_activity: 42
 
+    # Remove some main menu items by route:
+    main_menu:
+        remove:
+            - route: dashboard
+            - route: calendar
+
 # Set route on Tabler logo
 tabler:
     routes:
