@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="en" datatype="plaintext" original="none">
+    <body>
+      <trans-unit id="tNtlUNK" resname="timesheet.create">
+        <source>timesheet.create</source>
+        <target>Create registration</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
