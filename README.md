@@ -27,6 +27,9 @@ aarhus_kommune:
             - route: dashboard
             - route: calendar
 
+    # Web Accessibility Statement URL
+    was_url: https://was.digst.dk/tid-aarhuskommune-dk
+
 # Set route on Tabler logo
 tabler:
     routes:
@@ -34,6 +37,11 @@ tabler:
 ```
 
 ## Features
+
+### Web Accessibility Statement
+
+The path `/was` (route name: `aarhuskommune_was`) or `/{_locale}/was` (route name: `aarhuskommune_was_locale`) will
+redirect to the Web Accessibility Statement URL defined in `local.yaml`.
 
 ### App template overrides
 

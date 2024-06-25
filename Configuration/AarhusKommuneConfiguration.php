@@ -63,6 +63,11 @@ final class AarhusKommuneConfiguration
         return $this->findConfiguration('main_menu', allowEmpty: true, array: true) ?? [];
     }
 
+    public function getWasUrl(): ?string
+    {
+        return $this->findConfiguration('was_url', allowEmpty: true);
+    }
+
     private function findConfiguration(string $name, bool $allowEmpty = false, bool $array = false): mixed
     {
         $key = self::CONFIGURATION_NAME . '.' . $name;

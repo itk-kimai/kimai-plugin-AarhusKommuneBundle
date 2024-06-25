@@ -1,0 +1,14 @@
+# @see https://edit.was.digst.dk/#form
+aarhuskommune_was:
+    path: /was
+    controller: KimaiPlugin\AarhusKommuneBundle\Controller\WasController
+    methods: GET
+
+aarhuskommune_was_locale:
+    path: /{_locale}/was
+    requirements:
+        _locale: '%app_locales%'
+    defaults:
+        _locale: '%locale%'
+    controller: KimaiPlugin\AarhusKommuneBundle\Controller\WasController
+    methods: GET

@@ -9,3 +9,6 @@ services:
         resource: '../../*'
         exclude: '../../{Resources}'
 
+    KimaiPlugin\AarhusKommuneBundle\Controller\:
+        resource: '../../Controller'
+        tags: ['controller.service_arguments']
