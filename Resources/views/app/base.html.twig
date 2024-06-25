@@ -1,6 +1,19 @@
 {# Resources/views/app/base.html.twig #}
 {% extends '@App/base.html.twig' %}
 
+{% block navbar_start %}
+    {% if app.user is not null and is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+        {% block navbar_extensions %}{% endblock %}
+        {% if is_granted('create_own_timesheet') %}
+            {{ include('partials/ticktack.html.twig') }}
+        {% endif %}
+        {% block navbar_extensions_after %}
+            {% set event = trigger(constant('App\\Event\\ThemeEvent::TOOLBAR')) %}
+            {{ event.content|raw }}
+        {% endblock %}
+    {% endif %}
+{% endblock %}
+
 {% block page_content_after %}
     <div class="float-help">
         <a href="https://aarhuskommune.dk/tid" target="_blank" accesskey="h" title="{{ 'help'|trans }}">
