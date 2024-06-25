@@ -6,6 +6,9 @@
 #quick_entry_box table tfoot tr td:nth-child(1),
 #quick_entry_box table tfoot tr td:nth-child(2),
 
+/* Hide new entry on quick-entry-page */
+.quick-entry-page .add-item-link,
+
 /* Hide starttime, endtime, customer and project on timesheet  */
 .datatable_timesheet table thead tr th.col_starttime,
 .datatable_timesheet table tbody tr td.col_starttime,
@@ -17,7 +20,8 @@
 .datatable_timesheet table tbody tr td.col_project,
 
 /* Hide project, activity, description and tag on create entry modal  */
-.modal-body .row .col-sm-5:nth-child(2),
+.col-sm-5:has(#timesheet_edit_form_begin_time),
+.col-sm-5:has(#timesheet_edit_form_end_time),
 .timesheet_edit_form_row_project,
 .timesheet_edit_form_row_activity,
 .timesheet_edit_form_row_description,
