@@ -5,7 +5,7 @@
     {% if app.user is not null and is_granted('IS_AUTHENTICATED_REMEMBERED') %}
         {% block navbar_extensions %}{% endblock %}
         {% if is_granted('create_own_timesheet') %}
-            {% include 'partials/ticktack.html.twig' %}
+            {{ include('partials/ticktack.html.twig') }}
         {% endif %}
         {% block navbar_extensions_after %}
             {% set event = trigger(constant('App\\Event\\ThemeEvent::TOOLBAR')) %}
