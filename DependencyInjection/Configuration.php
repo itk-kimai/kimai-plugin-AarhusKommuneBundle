@@ -38,10 +38,15 @@ class Configuration implements ConfigurationInterface
                             ->arrayPrototype()
                                 ->children()
                                     ->scalarNode('route')
+                                    ->end()
                                 ->end()
                             ->end()
                         ->end()
                     ->end()
+                ->end()
+
+                ->scalarNode('was_url')
+                    ->info('Web Accessibility Statement URL')
                 ->end()
             ->end();
 
