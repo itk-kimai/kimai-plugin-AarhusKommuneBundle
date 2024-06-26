@@ -54,10 +54,8 @@ final class TimesheetSubscriber implements EventSubscriberInterface
             $attributes = $request->attributes;
             $route = $attributes->get('_route');
             if ('quick_entry' === $route) {
-                // @see App\Controller\QuickEntryController::quickEntry
-                $begin = $attributes->get('_route_params')['begin'] ?? null;
                 try {
-                    $this->timesheetHelper->ensureUserTimesheet(begin: $begin);
+                    $this->timesheetHelper->ensureUserTimesheet();
                 } catch (\Exception) {
                     // Ignore all exceptions.
                 }

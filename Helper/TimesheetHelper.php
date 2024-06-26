@@ -10,14 +10,11 @@
 
 namespace KimaiPlugin\AarhusKommuneBundle\Helper;
 
-use App\Controller\QuickEntryController;
 use App\Entity\Activity;
 use App\Entity\Project;
 use App\Entity\Timesheet;
 use App\Entity\User;
-use App\Repository\Query\TimesheetQuery;
 use App\Repository\TimesheetRepository;
-use App\Timesheet\DateTimeFactory;
 use App\Timesheet\TimesheetService;
 use KimaiPlugin\AarhusKommuneBundle\Configuration\AarhusKommuneConfiguration;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
@@ -53,67 +50,27 @@ class TimesheetHelper
     /**
      * Ensure that at least one timesheet exists for user.
      */
-    public function ensureUserTimesheet(?User $user = null, ?string $begin = null): ?Timesheet
+    public function ensureUserTimesheet(?User $user = null): ?Timesheet
     {
         $user ??= $this->getUser();
         if (null !== $user) {
-            $timesheet = $this->getUserTimesheet($user, $begin);
+            $timesheet = $this->timesheetRepository->findOneBy(['user' => $user]);
 
-            if (null === $timesheet) {
-                $timesheet = $this->timesheetService->createNewTimesheet($user);
-                $this->timesheetService->prepareNewTimesheet($timesheet);
-                $this->setDefaultProject($timesheet);
-                if (null !== $timesheet->getProject() && null !== $timesheet->getActivity()) {
-                    $this->timesheetRepository->save($timesheet);
+            if (null !== $timesheet) {
+                return $timesheet;
+            }
 
-                    return $timesheet;
-                }
+            $timesheet = $this->timesheetService->createNewTimesheet($user);
+            $this->timesheetService->prepareNewTimesheet($timesheet);
+            $this->setDefaultProject($timesheet);
+            if (null !== $timesheet->getProject() && null !== $timesheet->getActivity()) {
+                $this->timesheetRepository->save($timesheet);
+
+                return $timesheet;
             }
         }
 
         return null;
-    }
-
-    /**
-     * Get user timesheet.
-     *
-     * This code is lifted from QuickEntryController::quickEntry which see.
-     *
-     * @see QuickEntryController::quickEntry()
-     *
-     * @param User $user
-     * @param string|null $begin
-     * @return Timesheet|null
-     */
-    private function getUserTimesheet(User $user, ?string $begin): ?Timesheet
-    {
-        $factory = DateTimeFactory::createByUser($user);
-
-        if ($begin !== null) {
-            try {
-                $begin = $factory->createDateTime($begin);
-            } catch (\Exception $ex) {
-                $begin = null;
-            }
-        }
-
-        if ($begin === null) {
-            $begin = $factory->createDateTime();
-        }
-
-        $startWeek = $factory->getStartOfWeek($begin);
-        $endWeek = $factory->getEndOfWeek($begin);
-
-        $query = new TimesheetQuery();
-        $query->setBegin($startWeek);
-        $query->setEnd($endWeek);
-        $query->setName('quickEntryForm');
-        $query->setUser($user);
-
-        $result = $this->timesheetRepository->getTimesheetResult($query);
-        $timesheets = $result->getResults(true);
-
-        return reset($timesheets) ?: null;
     }
 
     /**
