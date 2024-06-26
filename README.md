@@ -38,6 +38,14 @@ tabler:
 
 ## Features
 
+### Login form
+
+The username and password fields on the login form are hidden by default, but they can be summoned by adding
+`#admin-login` to URL (i.e. `/en/login#admin-login`).
+
+A login message can be defined on `/en/admin/system-config/#conf_aarhuskommune_config` and this message is shown on the
+login form.
+
 ### Web Accessibility Statement
 
 The path `/was` (route name: `aarhuskommune_was`) or `/{_locale}/was` (route name: `aarhuskommune_was_locale`) will
@@ -107,7 +115,7 @@ docker run --rm --volume ${PWD}:/app --workdir /app itkdev/php8.3-fpm composer i
 docker run --rm --volume ${PWD}:/app --workdir /app itkdev/php8.3-fpm composer code-analysis
 ```
 
-*Note*: During development you should remove the `vendor/` folder to not confuse Kimai's autoloading.
+_Note_: During development you should remove the `vendor/` folder to not confuse Kimai's autoloading.
 
 ## Configuration from the admin
 

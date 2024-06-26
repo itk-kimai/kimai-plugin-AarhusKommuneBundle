@@ -1,0 +1,59 @@
+{% extends '@App/security/login.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        {# Hide username and password block.
+
+          The login form is also used to unlock admin account for full access
+          (to settings, say), so we check that the login block contains a
+          username text input before hiding it.
+        #}
+        #admin-login:has(input[type="text"][name="_username"]) {
+            display: none;
+        }
+        {# Show it when the URL fragment identifier is “admin-login” (i.e. https://…//en/login#admin-login) #}
+        #admin-login:has(input[type="text"][name="_username"]):target {
+            display: initial;
+        }
+    </style>
+{% endblock %}
+
+{# override block inherited from '@Tabler/security.html.twig' #}
+{% block login_box %}
+    <div id="admin-login">
+        {{ parent() }}
+    </div>
+{% endblock %}
+
+{% block login_social_auth %}
+    {% if saml_config.isActivated() %}
+        {% set login_message = kimai_config.get('aarhuskommune.login_message') %}
+        {% if login_message is not empty %}
+            <div class="card-body login-message">
+                {{ login_message|raw }}
+            </div>
+        {% endif %}
+
+        <div class="card-body">
+            <div class="row">
+                {% if not kimai_config.loginFormActive %}
+                    <h2 class="card-title text-center mb-4">{{ block('login_box_msg') }}</h2>
+                {% endif %}
+                <div class="col text-center">
+                    <a href="{{ path('saml_login') }}" id="social-login-button" tabindex="50" class="btn btn-white w-50">
+                        {% set provider = saml_config.getProvider() %}
+                        {% if provider is not null %}
+                            {% if 'fa-' in provider %}
+                                <i class="icon {{ provider }} text-{{ provider|replace({'fas ': '', 'far ': '', 'fab ': ''}) }}"></i>
+                            {% else %}
+                                <i class="icon fab fa-{{ provider }} text-{{ provider }}"></i>
+                            {% endif %}
+                        {% endif %}
+                        {{ saml_config.getTitle()|trans }}
+                    </a>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
