@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* [PR-9](https://github.com/itk-kimai/kimai-plugin-AarhusKommuneBundle/pull/9)
+  Trimmed and improved login form
 * [PR-8](https://github.com/itk-kimai/kimai-plugin-AarhusKommuneBundle/pull/8)
   Hide ui elements
 * [PR-7](https://github.com/itk-kimai/kimai-plugin-AarhusKommuneBundle/pull/7)
