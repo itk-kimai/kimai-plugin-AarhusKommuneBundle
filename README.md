@@ -108,3 +108,12 @@ docker run --rm --volume ${PWD}:/app --workdir /app itkdev/php8.3-fpm composer c
 ```
 
 *Note*: During development you should remove the `vendor/` folder to not confuse Kimai's autoloading.
+
+
+## Configuration from the admin
+
+### Weekly hours
+
+We only want one row visible so we set "Minimum number of rows" to 1 in on `admin/system-config/#conf_quick_entry`
+
+[Weekly Hours configuration fields](./docs/images/set-number-of-rows-on-weekly-hours.jpg)
