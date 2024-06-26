@@ -109,7 +109,6 @@ docker run --rm --volume ${PWD}:/app --workdir /app itkdev/php8.3-fpm composer c
 
 *Note*: During development you should remove the `vendor/` folder to not confuse Kimai's autoloading.
 
-
 ## Configuration from the admin
 
 ### Weekly hours
