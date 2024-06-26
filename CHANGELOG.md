@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* [PR-8](https://github.com/itk-kimai/kimai-plugin-AarhusKommuneBundle/pull/8)
+  Hide ui elements
 * [PR-7](https://github.com/itk-kimai/kimai-plugin-AarhusKommuneBundle/pull/7)
   Configuration documentation
 * [PR-5](https://github.com/itk-kimai/kimai-plugin-AarhusKommuneBundle/pull/5)

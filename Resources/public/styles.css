@@ -19,6 +19,32 @@
 .datatable_timesheet table thead tr th.col_project,
 .datatable_timesheet table tbody tr td.col_project,
 
+/* Hide reset button on timesheet_edit_form */
+form[name="timesheet_edit_form"] input[type="reset"],
+
+/* Hide customer on timesheet_edit_form */
+form[name="timesheet_edit_form"] .timesheet_edit_form_row_customer,
+
+/* Hide filter buttons on timesheet visibility */
+form[name="timesheet_visibility"] .form-selectgroup-item:has(#column_starttime),
+form[name="timesheet_visibility"] .form-selectgroup-item:has(#column_endtime),
+form[name="timesheet_visibility"] .form-selectgroup-item:has(#column_customer),
+form[name="timesheet_visibility"] .form-selectgroup-item:has(#column_project),
+form[name="timesheet_visibility"] .form-selectgroup-item:has(#column_description),
+form[name="timesheet_visibility"] .form-selectgroup-item:has(#column_tags),
+form[name="timesheet_visibility"] .form-selectgroup-item:has(#column_billable),
+form[name="timesheet_visibility"] .form-selectgroup-item:has(#column_exported),
+
+/* Hide filters on searchform */
+.searchform .row:has(#customers),
+.searchform .row:has(#projects),
+.searchform .row:has(#activities),
+.searchform .row:has(#tags),
+.searchform .row:has(#state),
+.searchform .row:has(#billable),
+.searchform .row:has(#exported),
+.searchform .row:has(#orderBy),
+
 /* Hide project, activity, description and tag on create entry modal  */
 .col-sm-5:has(#timesheet_edit_form_begin_time),
 .col-sm-5:has(#timesheet_edit_form_end_time),
