@@ -116,4 +116,4 @@ docker run --rm --volume ${PWD}:/app --workdir /app itkdev/php8.3-fpm composer c
 
 We only want one row visible so we set "Minimum number of rows" to 1 in on `admin/system-config/#conf_quick_entry`
 
-[Weekly Hours configuration fields](./docs/images/set-number-of-rows-on-weekly-hours.jpg)
+![Weekly Hours configuration fields](./docs/images/set-number-of-rows-on-weekly-hours.jpg)
