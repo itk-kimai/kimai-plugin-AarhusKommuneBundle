@@ -30,28 +30,19 @@ final class AarhusKommuneConfiguration
     {
     }
 
-    public function getPrimaryProject(): Project
+    public function getPrimaryProject(): ?Project
     {
         $id = $this->findConfiguration('primary_project');
 
-        $project = $this->projectRepository->find($id);
-        if (null === $project) {
-            throw new RuntimeException(sprintf('Invalid primary project id: %s', $id));
-        }
-
-        return $project;
+        return null === $id ? null : $this->projectRepository->find($id);
     }
 
-    public function getPrimaryActivity(Project $project): Activity
+    public function getPrimaryActivity(Project $project): ?Activity
     {
         $id = $this->findConfiguration('primary_activity');
+        $activity = null === $id ? null : $this->activityRepository->find($id);
 
-        $activity = $this->activityRepository->find($id);
-        if (null === $activity) {
-            throw new RuntimeException(sprintf('Invalid primary activity id: %s', $id));
-        }
-
-        if ($activity->getProject() !== $project) {
+        if (null !== $activity && $activity->getProject() !== $project) {
             throw new RuntimeException(sprintf('Activity %s (%s) does not belong to project %s (%s)', $activity->getName(), $activity->getId(), $project->getName(), $project->getId()));
         }
 
@@ -60,22 +51,18 @@ final class AarhusKommuneConfiguration
 
     public function getMainMenu(): array
     {
-        return $this->findConfiguration('main_menu', allowEmpty: true, array: true) ?? [];
+        return $this->findConfiguration('main_menu', array: true) ?? [];
     }
 
     public function getWasUrl(): ?string
     {
-        return $this->findConfiguration('was_url', allowEmpty: true);
+        return $this->findConfiguration('was_url');
     }
 
-    private function findConfiguration(string $name, bool $allowEmpty = false, bool $array = false): mixed
+    private function findConfiguration(string $name, bool $array = false): mixed
     {
         $key = self::CONFIGURATION_NAME . '.' . $name;
         $value = $array ? $this->configuration->findArray($key) : $this->configuration->find($key);
-
-        if (!$allowEmpty && empty($value)) {
-            throw new RuntimeException(sprintf('Configuration %s is not set', $key));
-        }
 
         return $value;
     }
