@@ -143,8 +143,8 @@ Paste this `/bundles/aarhuskommune/touch-icon-192x192.png` path to the "Logo" fi
 
 ### User permissions
 
-Set user profile permissions to no
-![User profile permissions off](./docs/images/permissions-user-profile.jpg)
+We set these permissions for the user role. Everything else is disabled.
+![User profile permissions](./docs/images/permissions-user.jpg)
 
 ## Release
 
