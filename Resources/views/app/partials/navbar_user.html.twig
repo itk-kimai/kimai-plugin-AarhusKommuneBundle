@@ -13,14 +13,12 @@
         {% if not tabler_bundle.isCondensedUserMenu() %}
         <div class="ps-2">
             <div>{{ user.name }}</div>
-            {% if user.title is not empty %}
-                <div class="mt-1 small text-body-secondary">
-                    {{ user.title }}
-                    {% if showLogoutLink %}
-                        <a class="ms-2" href="{{ logout_path() }}">{{ 'Sign out'|trans({}, 'TablerBundle') }}</a>
-                    {% endif %}
-                </div>
-            {% endif %}
+            <div class="mt-1 small text-body-secondary">
+                {{ user.title }}
+                {% if showLogoutLink %}
+                    <a class="ms-2" href="{{ logout_path() }}">{{ 'Sign out'|trans({}, 'TablerBundle') }}</a>
+                {% endif %}
+            </div>
         </div>
         {% endif %}
     </div>
