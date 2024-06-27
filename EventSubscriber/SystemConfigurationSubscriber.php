@@ -15,6 +15,7 @@ use App\Form\Model\Configuration;
 use App\Form\Model\SystemConfiguration;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\UrlType;
 
 class SystemConfigurationSubscriber implements EventSubscriberInterface
 {
@@ -33,6 +34,12 @@ class SystemConfigurationSubscriber implements EventSubscriberInterface
                     (new Configuration('aarhuskommune.login_message'))
                         ->setTranslationDomain('system-configuration')
                         ->setType(TextareaType::class),
+                    (new Configuration('aarhuskommune.help_url'))
+                        ->setTranslationDomain('system-configuration')
+                        ->setType(UrlType::class)
+                        ->setOptions([
+                            'required' => false,
+                        ]),
                 ])
         );
     }

@@ -15,10 +15,13 @@
 {% endblock %}
 
 {% block page_content_after %}
-    <div class="float-help">
-        <a href="https://aarhuskommune.dk/tid" target="_blank" accesskey="h" title="{{ 'help'|trans }}">
-            <i class="fas fa-question"></i>
-        </a>
-    </div>
+    {% set help_url = kimai_config.get('aarhuskommune.help_url') %}
+    {% if help_url|default(false) %}
+        <div class="float-help">
+            <a href="{{ help_url }}" target="_blank" accesskey="h" title="{{ 'help'|trans }}">
+                <i class="fas fa-question"></i>
+            </a>
+        </div>
+    {% endif %}
     <div class="mb-4"></div>
 {% endblock %}
