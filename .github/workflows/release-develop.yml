@@ -1,8 +1,9 @@
-name: develop release
+name: pre-release
 
 on:
   push:
     branches:
+      - main
       - develop
 
 permissions:
@@ -16,10 +17,12 @@ jobs:
 
       - name: Build and create release
         env:
-          GITHUB_TOKEN: ${{ github.TOKEN }}
+          GH_TOKEN: ${{ github.TOKEN }}
+          # https://stackoverflow.com/a/71158878/2502647
+          BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
         run: |
-          tag_name=dev-develop-${{ github.sha }}
-          release_name=release-develop
+          tag_name=dev-${BRANCH_NAME}
+          release_name=release-${BRANCH_NAME}
 
           ./bin/create-release $tag_name
 
