@@ -140,3 +140,15 @@ Use a custom app icon for login and top of header.
 Paste this `/bundles/aarhuskommune/touch-icon-192x192.png` path to the "Logo" field on `admin/system-config/#conf_branding`
 
 ![Change app icon configuration](./docs/images/change-app-icon.jpg)
+
+## Release
+
+Whenever something is pushed to the `develop` branch, e.g. when merging a pull request, a [`develop`
+pre-release](https://github.com/itk-kimai/kimai-plugin-AarhusKommuneBundle/releases/tag/release-develop ) is made (cf.
+[.github/workflows/release-develop.yml](.github/workflows/release-develop.yml)).
+
+To test creating a release, run
+
+``` shell
+docker run --tty --interactive --rm --volume ${PWD}:/app itkdev/php8.3-fpm:latest bin/create-release dev-test
+```
