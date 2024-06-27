@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* [PR-11](https://github.com/itk-kimai/kimai-plugin-AarhusKommuneBundle/pull/11)
+  Config documentation
 * [PR-10](https://github.com/itk-kimai/kimai-plugin-AarhusKommuneBundle/pull/10)
   Added help URL setting
 * [PR-9](https://github.com/itk-kimai/kimai-plugin-AarhusKommuneBundle/pull/9)
