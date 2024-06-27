@@ -1,0 +1,31 @@
+{# Resources/views/app/base.html.twig #}
+{% extends '@App/base.html.twig' %}
+
+{% block navbar_start %}
+    {% if app.user is not null and is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+        {% block navbar_extensions %}{% endblock %}
+        {% if is_granted('create_own_timesheet') %}
+            {{ include('partials/ticktack.html.twig') }}
+        {% endif %}
+        {% block navbar_extensions_after %}
+            {% set event = trigger(constant('App\\Event\\ThemeEvent::TOOLBAR')) %}
+            {{ event.content|raw }}
+        {% endblock %}
+    {% endif %}
+{% endblock %}
+
+{% block navbar_user %}
+    {{ include('partials/navbar_user.html.twig') }}
+{% endblock %}
+
+{% block page_content_after %}
+    {% set help_url = kimai_config.get('aarhuskommune.help_url') %}
+    {% if help_url|default(false) %}
+        <div class="float-help">
+            <a href="{{ help_url }}" target="_blank" accesskey="h" title="{{ 'help'|trans }}">
+                <i class="fas fa-question"></i>
+            </a>
+        </div>
+    {% endif %}
+    <div class="mb-4"></div>
+{% endblock %}

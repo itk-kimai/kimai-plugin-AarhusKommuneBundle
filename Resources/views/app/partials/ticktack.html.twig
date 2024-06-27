@@ -1,0 +1,12 @@
+{# Resources/views/app/partials/ticktack.html.twig #}
+
+{# Use `@App` to refer to the original template #}
+{# {{ include('@App/partials/ticktack.html.twig') }} #}
+
+<div class="nav-item d-flex me-1 ticktac">
+    <div class="btn-list">
+        <a href="{{ path('timesheet_create') }}" class="modal-ajax-form btn btn-outline-white btn-icon px-2">
+            <i class="text-green fas fa-circle-plus mx-1"></i> {{ 'timesheet.create'|trans }}
+        </a>
+    </div>
+</div>

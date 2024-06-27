@@ -1,0 +1,14 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+        bind:
+
+    KimaiPlugin\AarhusKommuneBundle\:
+        resource: '../../*'
+        exclude: '../../{Resources}'
+
+    KimaiPlugin\AarhusKommuneBundle\Controller\:
+        resource: '../../Controller'
+        tags: ['controller.service_arguments']
