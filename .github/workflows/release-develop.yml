@@ -1,0 +1,29 @@
+name: develop release
+
+on:
+  push:
+    branches:
+      - develop
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build and create release
+        env:
+          GITHUB_TOKEN: ${{ github.TOKEN }}
+        run: |
+          tag_name=dev-develop-${{ github.sha }}
+          release_name=release-develop
+
+          ./bin/create-release $tag_name
+
+          # Delete release if it already exists.
+          gh release view $release_name 2>&1 > /dev/null && gh release delete $release_name --yes
+          gh release create --prerelease --generate-notes $release_name *-$tag_name.tar.gz
+        shell: bash

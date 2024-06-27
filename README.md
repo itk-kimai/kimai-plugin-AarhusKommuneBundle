@@ -140,3 +140,9 @@ Use a custom app icon for login and top of header.
 Paste this `/bundles/aarhuskommune/touch-icon-192x192.png` path to the "Logo" field on `admin/system-config/#conf_branding`
 
 ![Change app icon configuration](./docs/images/change-app-icon.jpg)
+
+## Release
+
+``` shell
+docker run --tty --interactive --rm --volume ${PWD}:/app itkdev/php8.3-fpm:latest bin/create-release dev-test
+```
