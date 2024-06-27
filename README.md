@@ -141,6 +141,11 @@ Paste this `/bundles/aarhuskommune/touch-icon-192x192.png` path to the "Logo" fi
 
 ![Change app icon configuration](./docs/images/change-app-icon.jpg)
 
+### User permissions
+
+Set user profile permissions to no
+![User profile permissions off](./docs/images/permissions-user-profile.jpg)
+
 ## Release
 
 Whenever something is pushed to the `develop` branch, e.g. when merging a pull request, a [`develop`
