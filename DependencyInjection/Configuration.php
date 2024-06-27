@@ -10,6 +10,7 @@
 
 namespace KimaiPlugin\AarhusKommuneBundle\DependencyInjection;
 
+use App\Entity\UserPreference;
 use KimaiPlugin\AarhusKommuneBundle\Configuration\AarhusKommuneConfiguration;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
@@ -47,6 +48,23 @@ class Configuration implements ConfigurationInterface
 
                 ->scalarNode('was_url')
                     ->info('Web Accessibility Statement URL')
+                ->end()
+
+                ->arrayNode('user_defaults')
+                    ->children()
+                        ->scalarNode(UserPreference::LANGUAGE)
+                            ->defaultValue('da')
+                        ->end()
+                        ->scalarNode(UserPreference::LOCALE)
+                            ->defaultValue('da')
+                        ->end()
+                        ->scalarNode(UserPreference::TIMEZONE)
+                            ->defaultValue('Europe/Copenhagen')
+                        ->end()
+                        ->scalarNode(UserPreference::SKIN)
+                            ->defaultValue('default')
+                        ->end()
+                    ->end()
                 ->end()
             ->end();
 
