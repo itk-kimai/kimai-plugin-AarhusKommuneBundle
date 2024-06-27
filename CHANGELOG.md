@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0] - 2024-06-27
+
 * [PR-14](https://github.com/itk-kimai/kimai-plugin-AarhusKommuneBundle/pull/11)
   Fix logout
 * [PR-13](https://github.com/itk-kimai/kimai-plugin-AarhusKommuneBundle/pull/11)
@@ -36,4 +38,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * [PR-1](https://github.com/itk-dev/kimai-plugin-AarhusKommuneBundle/pull/1)
   Added Aarhus kommune plugin
 
-[Unreleased]: https://github.com/itk-dev/kimai-plugin-AarhusKommuneBundle
+[Unreleased]: https://github.com/itk-dev/kimai-plugin-AarhusKommuneBundle/compare/1.0.0...HEAD
+[1.0.0]: https://github.com/itk-dev/kimai-plugin-AarhusKommuneBundle/releases/tag/1.0.0
