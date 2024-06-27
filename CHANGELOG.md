@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* [PR-17](https://github.com/itk-kimai/kimai-plugin-AarhusKommuneBundle/pull/17)
+  Remove rows with repeated durations
+
 ## [1.0.0] - 2024-06-27
 
 * [PR-14](https://github.com/itk-kimai/kimai-plugin-AarhusKommuneBundle/pull/11)
