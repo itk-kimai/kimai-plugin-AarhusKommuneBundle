@@ -59,6 +59,11 @@ final class AarhusKommuneConfiguration
         return $this->findConfiguration('was_url');
     }
 
+    public function getUserDefaults(): array
+    {
+        return $this->findConfiguration('user_defaults', array: true) ?? [];
+    }
+
     private function findConfiguration(string $name, bool $array = false): mixed
     {
         $key = self::CONFIGURATION_NAME . '.' . $name;

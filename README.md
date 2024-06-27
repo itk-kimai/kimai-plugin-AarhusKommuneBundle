@@ -30,11 +30,20 @@ aarhus_kommune:
     # Web Accessibility Statement URL
     was_url: https://was.digst.dk/tid-aarhuskommune-dk
 
+    user_defaults:
+        # The default values.
+        !php/const App\Entity\UserPreference::LANGUAGE: 'da'
+        !php/const App\Entity\UserPreference::LOCALE: 'da'
+        !php/const App\Entity\UserPreference::TIMEZONE: 'Europe/Copenhagen'
+        !php/const App\Entity\UserPreference::SKIN: 'default'
+
 # Set route on Tabler logo
 tabler:
     routes:
         tabler_welcome: quick_entry
 ```
+
+Use `bin/console debug:config AarhusKommuneBundle` to check the active configuration.
 
 ## Features
 
