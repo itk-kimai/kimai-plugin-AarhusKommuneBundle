@@ -1,0 +1,27 @@
+{% set user = null %}
+{% set links = null %}
+{% set userdetails = tabler_user() %}
+{% if userdetails is not null %}
+    {% set user = userdetails.user %}
+    {% set links = userdetails.links %}
+    {% set showLogoutLink = userdetails.showLogoutLink %}
+{% endif %}
+{% if user is not null %}
+    <div class="d-flex align-items-center">
+        {% import 'partials/avatar.html.twig' as macro %}
+        {{ macro.avatar(user, 'sm') }}
+        {% if not tabler_bundle.isCondensedUserMenu() %}
+        <div class="ps-2">
+            <div>{{ user.name }}</div>
+            {% if user.title is not empty %}
+                <div class="mt-1 small text-body-secondary">
+                    {{ user.title }}
+                    {% if showLogoutLink %}
+                        <a class="ms-2" href="{{ logout_path() }}">{{ 'Sign out'|trans({}, 'TablerBundle') }}</a>
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+{% endif %}

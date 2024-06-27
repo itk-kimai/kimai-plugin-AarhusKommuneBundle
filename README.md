@@ -133,3 +133,10 @@ _Note_: During development you should remove the `vendor/` folder to not confuse
 We only want one row visible so we set "Minimum number of rows" to 1 in on `admin/system-config/#conf_quick_entry`
 
 ![Weekly Hours configuration fields](./docs/images/set-number-of-rows-on-weekly-hours.jpg)
+
+### App icon
+
+Use a custom app icon for login and top of header.
+Paste this `/bundles/aarhuskommune/touch-icon-192x192.png` path to the "Logo" field on `admin/system-config/#conf_branding`
+
+![Change app icon configuration](./docs/images/change-app-icon.jpg)
