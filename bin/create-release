@@ -64,7 +64,7 @@ done
 find $target_dir -type f -print0 | xargs -0 sed -i "s/%%VERSION%%/${tag}/g"
 
 # Strip any leading `dev-` from tag name in package name.
-name="kimai-plugin-${plugin_name}-${tag#dev-}.tar.gz"
+name="${plugin_name}-${tag#dev-}.tar.gz"
 tar --create --file "$name" -C "$release_dir" $plugin_name
 sha256sum "$name" >| checksum.txt
 

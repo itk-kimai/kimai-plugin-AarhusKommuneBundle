@@ -2,7 +2,7 @@
 
 ## Installation
 
-Download [a release](https://github.com/itk-kimai/kimai-plugin-AarhusKommuneBundle/releases) and move it to `var/plugins/`.
+Download [a release](https://github.com/itk-kimai/AarhusKommuneBundle/releases) and extract it to `var/plugins/`.
 
 ```shell
 # Install plugin assets in public/bundles/aarhuskommune (note it's "aarhuskommune" and not "aarhus_kommune").
@@ -93,7 +93,7 @@ Another example:
 ## Development
 
 ``` shell
-git clone --branch develop https://github.com/itk-kimai/kimai-plugin-AarhusKommuneBundle var/plugins/AarhusKommuneBundle
+git clone --branch develop https://github.com/itk-kimai/AarhusKommuneBundle var/plugins/AarhusKommuneBundle
 bin/console kimai:reload --no-interaction
 ```
 
