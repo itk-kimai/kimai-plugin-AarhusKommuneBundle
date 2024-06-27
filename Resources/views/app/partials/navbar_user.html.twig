@@ -8,10 +8,10 @@
 {% endif %}
 {% if user is not null %}
     <div class="d-flex align-items-center">
-        {% import "partials/avatar.html.twig" as macro %}
+        {% import 'partials/avatar.html.twig' as macro %}
         {{ macro.avatar(user, 'sm') }}
         {% if not tabler_bundle.isCondensedUserMenu() %}
-        <div class="d-none d-xl-block ps-2">
+        <div class="ps-2">
             <div>{{ user.name }}</div>
             {% if user.title is not empty %}
                 <div class="mt-1 small text-body-secondary">

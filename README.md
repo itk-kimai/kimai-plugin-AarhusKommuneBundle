@@ -127,6 +127,7 @@ We only want one row visible so we set "Minimum number of rows" to 1 in on `admi
 
 ### App icon
 
-Use a custom app icon for login and top of header. Paste this `/bundles/aarhuskommune/touch-icon-192x192.png` path to the "Logo" field on `admin/system-config/#conf_branding`
+Use a custom app icon for login and top of header.
+Paste this `/bundles/aarhuskommune/touch-icon-192x192.png` path to the "Logo" field on `admin/system-config/#conf_branding`
 
 ![Change app icon configuration](./docs/images/change-app-icon.jpg)
