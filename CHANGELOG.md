@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 * [PR-13](https://github.com/itk-kimai/kimai-plugin-AarhusKommuneBundle/pull/11)
   Remove 2fa link(dropdown)
+* [PR-12](https://github.com/itk-kimai/kimai-plugin-AarhusKommuneBundle/pull/12)
+  Set user default on creation
 * [PR-11](https://github.com/itk-kimai/kimai-plugin-AarhusKommuneBundle/pull/11)
   Config documentation
 * [PR-10](https://github.com/itk-kimai/kimai-plugin-AarhusKommuneBundle/pull/10)
