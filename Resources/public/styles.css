@@ -56,6 +56,9 @@ form[name="timesheet_visibility"] .form-selectgroup-item:has(#column_exported),
 .user-year-reporting-box tr.project,
 .user-year-reporting-box tfoot,
 
+/* Hide summery on quick_entry_box table */
+#quick_entry_box tfoot,
+
 /* Hide project, activity, description and tag on create entry modal  */
 .col-sm-5:has(#timesheet_edit_form_begin_time),
 .col-sm-5:has(#timesheet_edit_form_end_time),
@@ -66,7 +69,6 @@ form[name="timesheet_visibility"] .form-selectgroup-item:has(#column_exported),
 {
     display: none !important;
 }
-
 
 /* Set z-index on duration widget to avoid its hiding behind the sidebar menu */
 .duration-widget .dropdown-menu {
