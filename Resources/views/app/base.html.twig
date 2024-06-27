@@ -14,6 +14,10 @@
     {% endif %}
 {% endblock %}
 
+{% block navbar_user %}
+    {{ include('partials/navbar_user.html.twig') }}
+{% endblock %}
+
 {% block page_content_after %}
     {% set help_url = kimai_config.get('aarhuskommune.help_url') %}
     {% if help_url|default(false) %}
