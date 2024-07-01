@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* [PR-18](https://github.com/itk-kimai/AarhusKommuneBundle/pull/18)
+  1819: Set login_initial_view on user creation
 * [PR-17](https://github.com/itk-kimai/kimai-plugin-AarhusKommuneBundle/pull/17)
   Remove rows with repeated durations
 
