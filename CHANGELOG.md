@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* [PR-18](https://github.com/itk-kimai/AarhusKommuneBundle/pull/18)
+  1819: Set login_initial_view on user creation
+
 ## [1.0.0] - 2024-06-27
 
 * [PR-14](https://github.com/itk-kimai/kimai-plugin-AarhusKommuneBundle/pull/11)

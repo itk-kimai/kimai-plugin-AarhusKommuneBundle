@@ -64,6 +64,9 @@ class Configuration implements ConfigurationInterface
                         ->scalarNode(UserPreference::SKIN)
                             ->defaultValue('default')
                         ->end()
+                        ->scalarNode('login_initial_view')
+                            ->defaultValue('quick_entry')
+                        ->end()
                     ->end()
                 ->end()
             ->end();

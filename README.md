@@ -8,6 +8,7 @@ Download [a release](https://github.com/itk-kimai/AarhusKommuneBundle/releases) 
 # Install plugin assets in public/bundles/aarhuskommune (note it's "aarhuskommune" and not "aarhus_kommune").
 # Use "/bundles/aarhuskommune/" as base path when referencing assets..
 bin/console kimai:bundle:aarhus_kommune:install --no-interaction
+bin/console doctrine:migrations:migrate --configuration=var/plugins/AarhusKommuneBundle/Migrations/aarhus_kommune.yaml --no-interaction
 bin/console kimai:reload --no-interaction
 ```
 
@@ -36,6 +37,7 @@ aarhus_kommune:
         !php/const App\Entity\UserPreference::LOCALE: 'da'
         !php/const App\Entity\UserPreference::TIMEZONE: 'Europe/Copenhagen'
         !php/const App\Entity\UserPreference::SKIN: 'default'
+        login_initial_view: 'quick_entry'
 
 # Set route on Tabler logo
 tabler:

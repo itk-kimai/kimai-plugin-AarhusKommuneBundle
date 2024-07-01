@@ -13,7 +13,9 @@
             display: none;
         }
         {# Show it when the URL fragment identifier is “admin-login” (i.e. https://…//en/login#admin-login) #}
-        #admin-login:has(input[type="text"][name="_username"]):target {
+        #admin-login:has(input[type="text"][name="_username"]):target,
+        {# or it contains an alert, e.g. an "Invalid credentials." message #}
+        #admin-login:has(input[type="text"][name="_username"]):has(.alert) {
             display: initial;
         }
     </style>

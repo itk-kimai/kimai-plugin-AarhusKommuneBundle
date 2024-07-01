@@ -44,5 +44,6 @@ class UserSubscriber implements EventSubscriberInterface
         $user->setLocale($defaults[UserPreference::LOCALE] ?? 'da');
         $user->setTimezone($defaults[UserPreference::TIMEZONE] ?? 'Europe/Copenhagen');
         $user->setPreferenceValue(UserPreference::SKIN, $defaults[UserPreference::SKIN] ?? 'default');
+        $user->setPreferenceValue('login_initial_view', $defaults['login_initial_view'] ?? 'quick_entry');
     }
 }
