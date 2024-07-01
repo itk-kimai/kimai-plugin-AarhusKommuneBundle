@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* [PR-19](https://github.com/itk-kimai/AarhusKommuneBundle/pull/19)
+  1829: Hide create and edit button on timesheet page
 * [PR-18](https://github.com/itk-kimai/AarhusKommuneBundle/pull/18)
   1819: Set login_initial_view on user creation
 * [PR-17](https://github.com/itk-kimai/kimai-plugin-AarhusKommuneBundle/pull/17)
@@ -14,9 +16,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.0] - 2024-06-27
 
-* [PR-14](https://github.com/itk-kimai/kimai-plugin-AarhusKommuneBundle/pull/11)
+* [PR-14](https://github.com/itk-kimai/kimai-plugin-AarhusKommuneBundle/pull/14)
   Fix logout
-* [PR-13](https://github.com/itk-kimai/kimai-plugin-AarhusKommuneBundle/pull/11)
+* [PR-13](https://github.com/itk-kimai/kimai-plugin-AarhusKommuneBundle/pull/13)
   Remove 2fa link(dropdown)
 * [PR-12](https://github.com/itk-kimai/kimai-plugin-AarhusKommuneBundle/pull/12)
   Set user default on creation
