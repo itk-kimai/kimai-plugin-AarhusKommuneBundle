@@ -2,7 +2,7 @@
 {% extends '@App/base.html.twig' %}
 
 {% block body_start %}
-    data-title="AAK-tid – {{ block('page_title') }}"
+     class="{{ app.request.attributes.get('_route')|slug|lower }}" data-title="AAK-tid – {{ block('page_title')|e('html_attr') }}"
 {%- endblock -%}
 
 {% block navbar_start %}
