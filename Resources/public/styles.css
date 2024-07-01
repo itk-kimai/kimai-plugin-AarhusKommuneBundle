@@ -74,3 +74,12 @@ form[name="timesheet_visibility"] .form-selectgroup-item:has(#column_exported),
 .duration-widget .dropdown-menu {
     z-index: 9999;
 }
+
+/* Hide End on duration label on timesheet_create modal - Very ugly hack! Only works in Danish */
+form[name="timesheet_edit_form"] label[for="timesheet_edit_form_duration"] {
+  max-width: 8ch;
+  overflow: hidden;
+  height: 32px;
+  margin-right: 41px;
+  margin-bottom: 4px;
+}
