@@ -1,8 +1,8 @@
 {% extends '@App/default/_form_modal.html.twig' %}
 
 {% block modal_title %}
-    {# Ugly hack to change the generic title on timesheet_create modal #}
-    {% if title == 'Create' or 'Opret' %}
+    {# Change the generic title on timesheet_create modal #}
+    {% if app.request.attributes.get('_route') == 'timesheet_create' %}
         {{ 'timesheet.create'|trans }}
     {% else %}
         {{ title }}
