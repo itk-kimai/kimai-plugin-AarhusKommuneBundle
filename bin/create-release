@@ -28,7 +28,8 @@ release_files=(
   Exception/
   Helper/
   README.md
-  Resources
+  Resources/
+  TrackingMode/
   composer.json
   docs/
 )
