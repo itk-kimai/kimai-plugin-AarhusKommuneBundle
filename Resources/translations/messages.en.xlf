@@ -10,10 +10,10 @@
         <source>timesheet.mode_no_tracking</source>
         <target>No tracking</target>
       </trans-unit>
-        <trans-unit id="xzgRGHA" resname="aarhuskommune_config">
-            <source>aarhuskommune_config</source>
-            <target>Aarhus kommune</target>
-        </trans-unit>
+      <trans-unit id="xzgRGHA" resname="aarhuskommune_config">
+        <source>aarhuskommune_config</source>
+        <target>Aarhus kommune</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
