@@ -56,12 +56,13 @@ form[name="timesheet_visibility"] .form-selectgroup-item:has(#column_exported),
 .user-year-reporting-box tr.project,
 .user-year-reporting-box tfoot,
 
-/* Hide summery on quick_entry_box table */
-#quick_entry_box tfoot,
-
 /* Hide create button on timesheet */
 .timesheet .page-actions .action-create,
 .timesheet .page-actions .pa-mobile,
+
+/* Hide start button on timesheet col actions */
+.timesheet .col_actions .dd-ts-repeat,
+.timesheet .col_actions .dd-ts-stop,
 
 /* Hide edit button on timesheet (When entry is selected)*/
 #multi_update_form #multi_update_table_action_0,
@@ -89,4 +90,9 @@ form[name="timesheet_edit_form"] label[for="timesheet_edit_form_duration"] {
   height: 32px;
   margin-right: 41px;
   margin-bottom: 4px;
+}
+@media (max-width: 992px) {
+    form[name="timesheet_edit_form"] label[for="timesheet_edit_form_duration"] {
+        margin-right: 11px;
+    }
 }
