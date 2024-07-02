@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* [PR-21](https://github.com/itk-kimai/AarhusKommuneBundle/pull/21)
+  1829: Hide start and stop timetracking on timesheet column actions
 * [PR-20](https://github.com/itk-kimai/AarhusKommuneBundle/pull/20)
   1711: Added No tracking tracking mode
 * [PR-19](https://github.com/itk-kimai/AarhusKommuneBundle/pull/19)
