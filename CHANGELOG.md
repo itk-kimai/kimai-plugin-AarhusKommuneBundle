@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* [PR-20](https://github.com/itk-kimai/AarhusKommuneBundle/pull/20)
+  1711: Added No tracking tracking mode
 * [PR-19](https://github.com/itk-kimai/AarhusKommuneBundle/pull/19)
   1829: Hide create and edit button on timesheet page
 * [PR-18](https://github.com/itk-kimai/AarhusKommuneBundle/pull/18)
