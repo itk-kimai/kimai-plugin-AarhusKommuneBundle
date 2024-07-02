@@ -1,6 +1,10 @@
 {# Resources/views/app/base.html.twig #}
 {% extends '@App/base.html.twig' %}
 
+{% block body_start %}
+     class="{{ app.request.attributes.get('_route')|slug|lower }}" data-title="AAK-tid – {{ block('page_title')|e('html_attr') }}"
+{%- endblock -%}
+
 {% block navbar_start %}
     {% if app.user is not null and is_granted('IS_AUTHENTICATED_REMEMBERED') %}
         {% block navbar_extensions %}{% endblock %}
