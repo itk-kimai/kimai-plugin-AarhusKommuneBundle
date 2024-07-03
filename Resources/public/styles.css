@@ -45,6 +45,28 @@ form[name="timesheet_visibility"] .form-selectgroup-item:has(#column_exported),
 .searchform .row:has(#exported),
 .searchform .row:has(#orderBy),
 
+/* Hide rows on reporting tables */
+.user-week-reporting-box tr.summary,
+.user-week-reporting-box tr.project,
+.user-week-reporting-box tfoot,
+.user-month-reporting-box tr.summary,
+.user-month-reporting-box tr.project,
+.user-month-reporting-box tfoot,
+.user-year-reporting-box tr.summary,
+.user-year-reporting-box tr.project,
+.user-year-reporting-box tfoot,
+
+/* Hide create button on timesheet */
+.timesheet .page-actions .action-create,
+.timesheet .page-actions .pa-mobile,
+
+/* Hide start button on timesheet col actions */
+.timesheet .col_actions .dd-ts-repeat,
+.timesheet .col_actions .dd-ts-stop,
+
+/* Hide edit button on timesheet (When entry is selected)*/
+#multi_update_form #multi_update_table_action_0,
+
 /* Hide project, activity, description and tag on create entry modal  */
 .col-sm-5:has(#timesheet_edit_form_begin_time),
 .col-sm-5:has(#timesheet_edit_form_end_time),
@@ -54,4 +76,23 @@ form[name="timesheet_visibility"] .form-selectgroup-item:has(#column_exported),
 .timesheet_edit_form_row_tags
 {
     display: none !important;
+}
+
+/* Set z-index on duration widget to avoid its hiding behind the sidebar menu */
+.duration-widget .dropdown-menu {
+    z-index: 9999;
+}
+
+/* Hide End on duration label on timesheet_create modal - Very ugly hack! Only works in Danish */
+form[name="timesheet_edit_form"] label[for="timesheet_edit_form_duration"] {
+  max-width: 8ch;
+  overflow: hidden;
+  height: 32px;
+  margin-right: 41px;
+  margin-bottom: 4px;
+}
+@media (max-width: 992px) {
+    form[name="timesheet_edit_form"] label[for="timesheet_edit_form_duration"] {
+        margin-right: 11px;
+    }
 }

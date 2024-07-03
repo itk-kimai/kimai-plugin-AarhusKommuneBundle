@@ -1,0 +1,10 @@
+{% extends '@App/default/_form_modal.html.twig' %}
+
+{% block modal_title %}
+    {# Change the generic title on timesheet_create modal #}
+    {% if app.request.attributes.get('_route') == 'timesheet_create' %}
+        {{ 'timesheet.create'|trans }}
+    {% else %}
+        {{ title }}
+    {% endif %}
+{% endblock %}

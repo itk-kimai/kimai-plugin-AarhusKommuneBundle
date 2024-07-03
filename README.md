@@ -2,12 +2,13 @@
 
 ## Installation
 
-Download [a release](https://github.com/itk-kimai/kimai-plugin-AarhusKommuneBundle/releases) and move it to `var/plugins/`.
+Download [a release](https://github.com/itk-kimai/AarhusKommuneBundle/releases) and extract it to `var/plugins/`.
 
 ```shell
 # Install plugin assets in public/bundles/aarhuskommune (note it's "aarhuskommune" and not "aarhus_kommune").
 # Use "/bundles/aarhuskommune/" as base path when referencing assets..
 bin/console kimai:bundle:aarhus_kommune:install --no-interaction
+bin/console doctrine:migrations:migrate --configuration=var/plugins/AarhusKommuneBundle/Migrations/aarhus_kommune.yaml --no-interaction
 bin/console kimai:reload --no-interaction
 ```
 
@@ -36,6 +37,7 @@ aarhus_kommune:
         !php/const App\Entity\UserPreference::LOCALE: 'da'
         !php/const App\Entity\UserPreference::TIMEZONE: 'Europe/Copenhagen'
         !php/const App\Entity\UserPreference::SKIN: 'default'
+        login_initial_view: 'quick_entry'
 
 # Set route on Tabler logo
 tabler:
@@ -93,7 +95,7 @@ Another example:
 ## Development
 
 ``` shell
-git clone --branch develop https://github.com/itk-kimai/kimai-plugin-AarhusKommuneBundle var/plugins/AarhusKommuneBundle
+git clone --branch develop https://github.com/itk-kimai/AarhusKommuneBundle var/plugins/AarhusKommuneBundle
 bin/console kimai:reload --no-interaction
 ```
 
@@ -127,6 +129,8 @@ docker run --rm --volume ${PWD}:/app --workdir /app itkdev/php8.3-fpm composer c
 _Note_: During development you should remove the `vendor/` folder to not confuse Kimai's autoloading.
 
 ## Configuration from the admin
+
+The “Timetracking mode” must be set to “No tracking“ on `admin/system-config/#conf_timesheet`
 
 ### Weekly hours
 
