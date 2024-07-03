@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* [PR-23](https://github.com/itk-kimai/AarhusKommuneBundle/pull/23)
+  Prevent editing timesheet begin and end
 * [PR-22](https://github.com/itk-kimai/AarhusKommuneBundle/pull/22)
   1855: Change title on login
 * [PR-21](https://github.com/itk-kimai/AarhusKommuneBundle/pull/21)
