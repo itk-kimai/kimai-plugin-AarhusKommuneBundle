@@ -72,8 +72,6 @@ form[name="timesheet_visibility"] .form-selectgroup-item:has(#column_exported),
 #report-form .dropdown:has(.fa-layer-group),
 
 /* Hide project, activity, description and tag on create entry modal  */
-.col-sm-5:has(#timesheet_edit_form_begin_time),
-.col-sm-5:has(#timesheet_edit_form_end_time),
 .timesheet_edit_form_row_project,
 .timesheet_edit_form_row_activity,
 .timesheet_edit_form_row_description,
@@ -87,16 +85,3 @@ form[name="timesheet_visibility"] .form-selectgroup-item:has(#column_exported),
     z-index: 9999;
 }
 
-/* Hide End on duration label on timesheet_create modal - Very ugly hack! Only works in Danish */
-form[name="timesheet_edit_form"] label[for="timesheet_edit_form_duration"] {
-  max-width: 8ch;
-  overflow: hidden;
-  height: 32px;
-  margin-right: 41px;
-  margin-bottom: 4px;
-}
-@media (max-width: 992px) {
-    form[name="timesheet_edit_form"] label[for="timesheet_edit_form_duration"] {
-        margin-right: 11px;
-    }
-}
