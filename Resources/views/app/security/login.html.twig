@@ -45,6 +45,7 @@
                     <h2 class="card-title text-center mb-4">{{ block('login_box_msg') }}</h2>
                 {% endif %}
                 <div class="col text-center">
+                    <h3>{{ 'login.providers_title'|trans }}</h3>
                     <a href="{{ path('saml_login') }}" id="social-login-button" tabindex="50" class="btn btn-white">
                         {% set provider = saml_config.getProvider() %}
                         {% if provider is not null %}

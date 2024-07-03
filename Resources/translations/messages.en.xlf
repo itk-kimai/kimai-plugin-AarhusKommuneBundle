@@ -14,6 +14,10 @@
         <source>aarhuskommune_config</source>
         <target>Aarhus kommune</target>
       </trans-unit>
+      <trans-unit id="RGHxzgA" resname="login.providers_title">
+        <source>login.providers_title</source>
+        <target>Choose login method</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
