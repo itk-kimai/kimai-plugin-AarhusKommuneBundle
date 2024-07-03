@@ -26,7 +26,7 @@ final class NoTrackingMode extends AbstractTrackingMode
 
     public function canEditBegin(): bool
     {
-        return false;
+        return true;
     }
 
     public function canEditEnd(): bool
