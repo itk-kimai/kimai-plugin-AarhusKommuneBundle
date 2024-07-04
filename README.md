@@ -150,6 +150,11 @@ Paste this `/bundles/aarhuskommune/touch-icon-192x192.png` path to the "Logo" fi
 We set these permissions for the user role. Everything else is disabled.
 ![User profile permissions](./docs/images/permissions-user.jpg)
 
+### Teamlead permissions
+
+We set these permissions for the teamlead role. Everything else is disabled.
+![Teamlead permissions](./docs/images/permissions-teamlead.jpg)
+
 ## Release
 
 Whenever something is pushed to the `develop` branch, e.g. when merging a pull request, a [`develop`
