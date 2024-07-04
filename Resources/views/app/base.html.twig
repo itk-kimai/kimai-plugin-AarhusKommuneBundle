@@ -6,7 +6,7 @@
 {% block body_start %}
     class="{{ app.request.attributes.get('_route')|slug|lower }}"
     {% if meta_title is not empty %}
-        data-title="{{ meta_title|raw }}"
+        data-title="{{ meta_title }}"
     {% else %}
         {{ parent() }}
     {% endif %}
@@ -31,7 +31,7 @@
 
 {% block title %}
     {% if meta_title is not empty %}
-        {{ meta_title|raw }}
+        {{ meta_title }}
     {% else %}
         {{ parent() }}
     {% endif %}
