@@ -27,6 +27,7 @@ aarhus_kommune:
         remove:
             - route: dashboard
             - route: calendar
+            - route: admin_timesheet
 
     # Web Accessibility Statement URL
     was_url: https://was.digst.dk/tid-aarhuskommune-dk
