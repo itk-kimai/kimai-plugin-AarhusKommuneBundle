@@ -29,7 +29,6 @@ release_files=(
   Helper/
   README.md
   Resources/
-  TrackingMode/
   composer.json
   docs/
 )

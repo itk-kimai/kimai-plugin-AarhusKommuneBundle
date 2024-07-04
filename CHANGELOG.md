@@ -7,6 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2024-07-04
+
+* [PR-27](https://github.com/itk-kimai/AarhusKommuneBundle/pull/27)
+  1854: Fixed timesheet issues and cleaned up form display
+* [PR-26](https://github.com/itk-kimai/AarhusKommuneBundle/pull/26)
+  Teamlead roles documentation
+* [PR-25](https://github.com/itk-kimai/AarhusKommuneBundle/pull/25)
+  Login form design
+* [PR-24](https://github.com/itk-kimai/AarhusKommuneBundle/pull/24)
+  Only hide begin time on timesheet modal
+* [PR-23](https://github.com/itk-kimai/AarhusKommuneBundle/pull/23)
+  Prevent editing timesheet begin and end
+* [PR-22](https://github.com/itk-kimai/AarhusKommuneBundle/pull/22)
+  1855: Change title on login
+
+## [1.1.0] - 2024-07-03
+
 * [PR-21](https://github.com/itk-kimai/AarhusKommuneBundle/pull/21)
   1829: Hide start and stop timetracking on timesheet column actions
 * [PR-20](https://github.com/itk-kimai/AarhusKommuneBundle/pull/20)
@@ -49,5 +66,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * [PR-1](https://github.com/itk-dev/kimai-plugin-AarhusKommuneBundle/pull/1)
   Added Aarhus kommune plugin
 
-[Unreleased]: https://github.com/itk-dev/kimai-plugin-AarhusKommuneBundle/compare/1.0.0...HEAD
+[Unreleased]: https://github.com/itk-dev/kimai-plugin-AarhusKommuneBundle/compare/1.2.0...HEAD
+[1.2.0]: https://github.com/itk-dev/kimai-plugin-AarhusKommuneBundle/compare/1.0.0...1.2.0
+[1.1.0]: https://github.com/itk-dev/kimai-plugin-AarhusKommuneBundle/compare/1.0.0...1.1.0
 [1.0.0]: https://github.com/itk-dev/kimai-plugin-AarhusKommuneBundle/releases/tag/1.0.0

@@ -66,7 +66,7 @@
             "php-cs-fixer fix"
         ],
         "coding-standards-apply/twig-cs-fixer": [
-            "twig-cs-fixer lint Resources/views --fix"
+            "twig-cs-fixer lint --fix"
         ],
         "coding-standards-check": [
             "@coding-standards-check/php-cs-fixer",
@@ -76,7 +76,7 @@
             "php-cs-fixer fix --dry-run --format=checkstyle"
         ],
         "coding-standards-check/twig-cs-fixer": [
-            "twig-cs-fixer lint Resources/views"
+            "twig-cs-fixer lint"
         ]
     }
 }

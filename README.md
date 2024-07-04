@@ -27,6 +27,7 @@ aarhus_kommune:
         remove:
             - route: dashboard
             - route: calendar
+            - route: admin_timesheet
 
     # Web Accessibility Statement URL
     was_url: https://was.digst.dk/tid-aarhuskommune-dk
@@ -130,8 +131,6 @@ _Note_: During development you should remove the `vendor/` folder to not confuse
 
 ## Configuration from the admin
 
-The “Timetracking mode” must be set to “No tracking“ on `admin/system-config/#conf_timesheet`
-
 ### Weekly hours
 
 We only want one row visible so we set "Minimum number of rows" to 1 in on `admin/system-config/#conf_quick_entry`
@@ -149,6 +148,11 @@ Paste this `/bundles/aarhuskommune/touch-icon-192x192.png` path to the "Logo" fi
 
 We set these permissions for the user role. Everything else is disabled.
 ![User profile permissions](./docs/images/permissions-user.jpg)
+
+### Teamlead permissions
+
+We set these permissions for the teamlead role. Everything else is disabled.
+![Teamlead permissions](./docs/images/permissions-teamlead.jpg)
 
 ## Release
 
