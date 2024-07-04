@@ -1,8 +1,15 @@
 {# Resources/views/app/base.html.twig #}
 {% extends '@App/base.html.twig' %}
 
+{% set meta_title = kimai_config.get('aarhuskommune.meta-title') %}
+
 {% block body_start %}
-     class="{{ app.request.attributes.get('_route')|slug|lower }}" data-title="AAK-tid – {{ block('page_title')|e('html_attr') }}"
+    class="{{ app.request.attributes.get('_route')|slug|lower }}"
+    {% if meta_title is not empty %}
+        data-title="{{ meta_title|raw }}"
+    {% else %}
+        {{ parent() }}
+    {% endif %}
 {%- endblock -%}
 
 {% block navbar_start %}
@@ -22,7 +29,13 @@
     {{ include('partials/navbar_user.html.twig') }}
 {% endblock %}
 
-{% block title %}AAK-tid – {{ block('page_title') }}{% endblock %}
+{% block title %}
+    {% if meta_title is not empty %}
+        {{ meta_title|raw }}
+    {% else %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}
 
 {% block page_content_after %}
     {% set help_url = kimai_config.get('aarhuskommune.help_url') %}

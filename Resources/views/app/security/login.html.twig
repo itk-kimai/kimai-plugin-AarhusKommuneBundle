@@ -21,7 +21,14 @@
     </style>
 {% endblock %}
 
-{% block title %}AAK-tid{% endblock %}
+{% block title %}
+    {% set meta_title = kimai_config.get('aarhuskommune.meta-title') %}
+    {% if meta_title is not empty %}
+        {{ meta_title|raw }}
+    {% else %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}
 
 {# override block inherited from '@Tabler/security.html.twig' #}
 {% block login_box %}

@@ -14,6 +14,7 @@ use App\Event\SystemConfigurationEvent;
 use App\Form\Model\Configuration;
 use App\Form\Model\SystemConfiguration;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
 
@@ -33,7 +34,7 @@ class SystemConfigurationSubscriber implements EventSubscriberInterface
                 ->setConfiguration([
                     (new Configuration('aarhuskommune.meta-title'))
                         ->setTranslationDomain('system-configuration')
-                        ->setType(TextareaType::class)
+                        ->setType(TextType::class)
                         ->setOptions([
                             'required' => false,
                         ]),
@@ -42,7 +43,7 @@ class SystemConfigurationSubscriber implements EventSubscriberInterface
                         ->setType(TextareaType::class),
                     (new Configuration('aarhuskommune.social_login_title'))
                         ->setTranslationDomain('system-configuration')
-                        ->setType(TextareaType::class)
+                        ->setType(TextType::class)
                         ->setOptions([
                             'required' => false,
                         ]),
