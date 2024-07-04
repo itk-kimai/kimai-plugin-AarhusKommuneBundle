@@ -131,8 +131,6 @@ _Note_: During development you should remove the `vendor/` folder to not confuse
 
 ## Configuration from the admin
 
-The “Timetracking mode” must be set to “No tracking“ on `admin/system-config/#conf_timesheet`
-
 ### Weekly hours
 
 We only want one row visible so we set "Minimum number of rows" to 1 in on `admin/system-config/#conf_quick_entry`

@@ -62,6 +62,14 @@ class TimesheetHelper
 
             $timesheet = $this->timesheetService->createNewTimesheet($user);
             $this->timesheetService->prepareNewTimesheet($timesheet);
+
+            // Set timesheet end to prevent having a running tracker.
+            $begin = $timesheet->getBegin();
+            if (null !== $begin) {
+                $end = clone $begin;
+                $timesheet->setEnd($end);
+            }
+
             $this->setDefaultProject($timesheet);
             if (null !== $timesheet->getProject() && null !== $timesheet->getActivity()) {
                 $this->timesheetRepository->save($timesheet);

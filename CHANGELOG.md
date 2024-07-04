@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* [PR-27](https://github.com/itk-kimai/AarhusKommuneBundle/pull/27)
+  1854: Fixed timesheet issues and cleaned up form display
 * [PR-26](https://github.com/itk-kimai/AarhusKommuneBundle/pull/26)
   Teamlead roles documentation
 * [PR-24](https://github.com/itk-kimai/AarhusKommuneBundle/pull/24)
