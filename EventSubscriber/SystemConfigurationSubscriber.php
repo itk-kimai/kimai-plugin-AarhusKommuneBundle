@@ -31,9 +31,21 @@ class SystemConfigurationSubscriber implements EventSubscriberInterface
         $event->addConfiguration(
             (new SystemConfiguration('aarhuskommune_config'))
                 ->setConfiguration([
+                    (new Configuration('aarhuskommune.meta-title'))
+                        ->setTranslationDomain('system-configuration')
+                        ->setType(TextareaType::class)
+                        ->setOptions([
+                            'required' => false,
+                        ]),
                     (new Configuration('aarhuskommune.login_message'))
                         ->setTranslationDomain('system-configuration')
                         ->setType(TextareaType::class),
+                    (new Configuration('aarhuskommune.social_login_title'))
+                        ->setTranslationDomain('system-configuration')
+                        ->setType(TextareaType::class)
+                        ->setOptions([
+                            'required' => false,
+                        ]),
                     (new Configuration('aarhuskommune.help_url'))
                         ->setTranslationDomain('system-configuration')
                         ->setType(UrlType::class)
