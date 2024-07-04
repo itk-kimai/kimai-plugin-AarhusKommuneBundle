@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* [PR-24](https://github.com/itk-kimai/AarhusKommuneBundle/pull/24)
+  Only hide begin time on timesheet modal
 * [PR-23](https://github.com/itk-kimai/AarhusKommuneBundle/pull/23)
   Prevent editing timesheet begin and end
 * [PR-22](https://github.com/itk-kimai/AarhusKommuneBundle/pull/22)
