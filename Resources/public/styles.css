@@ -73,6 +73,7 @@ form[name="timesheet_visibility"] .form-selectgroup-item:has(#column_exported),
 
 /* Hide project, activity, description and tag on create entry modal  */
 .col-sm-5:has(#timesheet_edit_form_begin_time),
+.col-sm-5:has(#timesheet_edit_form_end_time),
 .timesheet_edit_form_row_project,
 .timesheet_edit_form_row_activity,
 .timesheet_edit_form_row_description,
@@ -86,11 +87,13 @@ form[name="timesheet_visibility"] .form-selectgroup-item:has(#column_exported),
     z-index: 9999;
 }
 
-.col-sm-5:has(#timesheet_edit_form_begin_date) {
+.col-sm-5:has(#timesheet_edit_form_begin_date),
+.col-sm-5:has(#timesheet_edit_form_duration) {
     width: 100%;
 }
 @media (min-width: 576px) {
-    .col-sm-5:has(#timesheet_edit_form_begin_date) {
+    .col-sm-5:has(#timesheet_edit_form_begin_date),
+    .col-sm-5:has(#timesheet_edit_form_duration) {
         width: 83.333%;
     }
 }
