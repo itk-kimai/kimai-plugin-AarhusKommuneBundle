@@ -29,22 +29,19 @@
                         {% endif %}
                         #}
                     </label>
-                    {# {% set size = form.duration is defined and form.end_time is defined ? 5 : 10 %} #}
-                    {% set size = form.duration is defined and false ? 5 : 10 %}
+                    {% set size = form.duration is defined and form.end_time is defined ? 5 : 10 %}
                     {% if form.duration is defined %}
                     <div class="col-sm-{{ size }}">
                         {{ form_widget(form.duration, {'label': false}) }}
                         {{ form_errors(form.duration, {'label': false}) }}
                     </div>
                     {% endif %}
-                    {#
                     {% if form.end_time is defined %}
                     <div class="col-sm-{{ size }}">
                         {{ form_widget(form.end_time, {'label': false}) }}
                         {{ form_errors(form.end_time, {'label': false}) }}
                     </div>
                     {% endif %}
-                    #}
                 </div>
             {% else %}
                 {% if form.duration is defined %}
