@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* [PR-28](https://github.com/itk-kimai/AarhusKommuneBundle/pull/28)
+  Improved release script
+
 ## [1.2.0] - 2024-07-04
 
 * [PR-27](https://github.com/itk-kimai/AarhusKommuneBundle/pull/27)

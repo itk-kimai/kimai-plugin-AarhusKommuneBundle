@@ -163,5 +163,5 @@ pre-release](https://github.com/itk-kimai/kimai-plugin-AarhusKommuneBundle/relea
 To test creating a release, run
 
 ``` shell
-docker run --tty --interactive --rm --volume ${PWD}:/app itkdev/php8.3-fpm:latest bin/create-release dev-test
+docker compose build && docker compose run --rm php bin/create-release dev-test
 ```
