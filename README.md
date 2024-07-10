@@ -111,10 +111,11 @@ to [symlink](https://en.wikipedia.org/wiki/Symbolic_link) the `public` folder.
 ### Coding standards
 
 ``` shell
-docker run --rm --volume ${PWD}:/app --workdir /app itkdev/php8.3-fpm composer install
-docker run --rm --volume ${PWD}:/app --workdir /app itkdev/php8.3-fpm composer normalize
-docker run --rm --volume ${PWD}:/app --workdir /app itkdev/php8.3-fpm composer coding-standards-apply
-docker run --rm --volume ${PWD}:/app --workdir /app itkdev/php8.3-fpm composer coding-standards-check
+docker compose build
+docker compose run --rm php composer install
+docker compose run --rm php composer normalize
+docker compose run --rm php composer coding-standards-apply
+docker compose run --rm php composer coding-standards-check
 ```
 
 ``` shell
@@ -123,8 +124,8 @@ docker run --rm --volume "$(pwd):/md" peterdavehello/markdownlint markdownlint -
 ```
 
 ``` shell
-docker run --rm --volume ${PWD}:/app --workdir /app itkdev/php8.3-fpm composer install
-docker run --rm --volume ${PWD}:/app --workdir /app itkdev/php8.3-fpm composer code-analysis
+docker compose run --rm php composer install
+docker compose run --rm php composer code-analysis
 ```
 
 _Note_: During development you should remove the `vendor/` folder to not confuse Kimai's autoloading.
