@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 * [PR-29](https://github.com/itk-kimai/AarhusKommuneBundle/pull/30)
   Remove prerelease flag in release.yml.
+* [PR-31](https://github.com/itk-kimai/AarhusKommuneBundle/pull/31)
+  Code cleanup
 * [PR-28](https://github.com/itk-kimai/AarhusKommuneBundle/pull/28)
   Improved release script
 
