@@ -3,14 +3,14 @@
     "description": "A Kimai plugin for Aarhus Kommune",
     "license": "MIT",
     "type": "kimai-plugin",
-    "version": "dev-test",
+    "version": "0.0.0",
     "keywords": [
         "kimai",
         "kimai-plugin"
     ],
     "authors": [
         {
-            "name": "Ricky Mikkel",
+            "name": "Mikkel Ricky",
             "homepage": "https://github.com/rimi-itk"
         }
     ],
